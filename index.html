@@ -1,1 +1,112 @@
-Test
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>nioctiB — Coming Soon</title>
+  <meta name="description" content="nioctiB — Bitcoin, reversed. A minimal coming soon page." />
+  <meta name="theme-color" content="#0b0f14" />
+  <style>
+    :root{
+      --bg: #0b0f14;
+      --bg-2: #0f1520;
+      --text: #e6edf3;
+      --muted: #a8b3c2;
+      --orange: #F7931A;
+      --orange-2: #ffb457;
+      --stroke: #233246;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(900px 500px at 80% -10%, rgba(247,147,26,.14), transparent 60%),
+        radial-gradient(800px 520px at -10% 10%, rgba(61,138,255,.12), transparent 55%),
+        linear-gradient(180deg, var(--bg-2), var(--bg));
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      display: grid;
+      place-items: center;
+      min-height: 100svh;
+      padding: 28px;
+    }
+    .card {
+      width: min(560px, 92vw);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      padding: 28px 24px 26px;
+      text-align: center;
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+      backdrop-filter: blur(6px) saturate(1.1);
+    }
+    .mark {
+      width: 72px; height: 72px; margin: 0 auto 14px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 30%, #fff8 0 8px, transparent 9px),
+        radial-gradient(circle at 70% 65%, #0003 0 14px, transparent 24px),
+        linear-gradient(135deg, var(--orange-2), var(--orange));
+      box-shadow: inset 0 1px 2px rgba(255,255,255,.25), inset 0 -4px 10px rgba(0,0,0,.25), 0 6px 18px rgba(247,147,26,.35);
+      position: relative;
+    }
+    .mark::after{
+      content: "₿";
+      position: absolute; inset: 0; display: grid; place-items: center;
+      font-weight: 900; font-size: 28px; color: #0b0f14; text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    }
+    h1 {
+      margin: 6px 0 6px;
+      font-size: clamp(28px, 5vw, 40px);
+      letter-spacing: -0.02em;
+    }
+    .tag {
+      display: inline-flex; gap: 8px; align-items: center;
+      color: var(--muted); font-size: 13px; letter-spacing: .18em; text-transform: uppercase;
+      border: 1px solid var(--stroke);
+      padding: 6px 10px; border-radius: 999px;
+      background: rgba(255,255,255,.04);
+    }
+    .lead {
+      margin: 10px 0 2px;
+      color: #c2ceda;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .soon {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(247,147,26,.55);
+      color: #0b0f14;
+      background: linear-gradient(180deg, var(--orange-2), var(--orange));
+      font-weight: 700;
+      letter-spacing: .2px;
+      box-shadow: 0 10px 26px rgba(247,147,26,.32), inset 0 1px 0 rgba(255,255,255,.6);
+    }
+    footer {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <main class="card" role="main" aria-label="nioctiB Coming Soon">
+    <div class="mark" aria-hidden="true"></div>
+    <div class="tag" aria-label="Tagline">Bitcoin spirit, reversed</div>
+    <h1>nioctiB</h1>
+    <p class="lead">We’re crafting something simple, fast, and open.<br />Stay tuned.</p>
+    <span class="soon" aria-label="Coming soon badge">Coming Soon</span>
+    <footer>© <span id="y"></span> nioctiB • All rights reserved</footer>
+  </main>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
